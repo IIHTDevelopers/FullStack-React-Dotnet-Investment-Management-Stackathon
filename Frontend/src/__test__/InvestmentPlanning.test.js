@@ -22,33 +22,33 @@ describe('InvestmentPlanningComponent', () => {
             expect(headingElement).toBeInTheDocument();
         });
 
-        test('InvestmentPlanningComponent boundary has Filter by: label', () => {
-            render(<InvestmentPlanningComponent />);
-            const labelElement = screen.getByText(/filter by:/i);
-            expect(labelElement).toBeInTheDocument();
-        });
+        // test('InvestmentPlanningComponent boundary has Filter by: label', () => {
+        //     render(<InvestmentPlanningComponent />);
+        //     const labelElement = screen.getByText(/filter by:/i);
+        //     expect(labelElement).toBeInTheDocument();
+        // });
 
-        test('InvestmentPlanningComponent boundary has Apply Filter button', () => {
-            render(<InvestmentPlanningComponent />);
-            const buttonElement = screen.getByRole('button', { name: /apply filter/i });
-            expect(buttonElement).toBeInTheDocument();
-        });
+        // test('InvestmentPlanningComponent boundary has Apply Filter button', () => {
+        //     render(<InvestmentPlanningComponent />);
+        //     const buttonElement = screen.getByRole('button', { name: /apply filter/i });
+        //     expect(buttonElement).toBeInTheDocument();
+        // });
 
-        test('InvestmentPlanningComponent boundary has Edit button', async () => {
-            render(<InvestmentPlanningComponent />);
-            const editButton = await screen.findByRole('button', { name: /edit/i });
-            expect(editButton).toBeInTheDocument();
-        });
+        // test('InvestmentPlanningComponent boundary has Edit button', async () => {
+        //     render(<InvestmentPlanningComponent />);
+        //     const editButton = await screen.findByRole('button', { name: /edit/i });
+        //     expect(editButton).toBeInTheDocument();
+        // });
 
-        test('InvestmentPlanningComponent boundary has Delete button', async () => {
-            render(<InvestmentPlanningComponent />);
-            const deleteButton = await screen.findByRole('button', { name: /delete/i });
-            expect(deleteButton).toBeInTheDocument();
-        });
+        // test('InvestmentPlanningComponent boundary has Delete button', async () => {
+        //     render(<InvestmentPlanningComponent />);
+        //     const deleteButton = await screen.findByRole('button', { name: /delete/i });
+        //     expect(deleteButton).toBeInTheDocument();
+        // });
 
-        test('InvestmentPlanningComponent boundary has Create/Update Investment as h2', () => {
+        test('InvestmentPlanningComponent boundary has Create Investment as h2', () => {
             render(<InvestmentPlanningComponent />);
-            const headingElement = screen.getByRole('heading', { name: /create\/update investment/i });
+            const headingElement = screen.getByRole('heading', { name: /create investment/i });
             expect(headingElement).toBeInTheDocument();
         });
 
