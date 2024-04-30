@@ -35,56 +35,56 @@ namespace InvestmentManagement.Controllers
         }
 
 
-        [HttpPut]
-        [Route("update-investment")]
-        public async Task<IActionResult> UpdateInvestment([FromBody] InvestmentViewModel model)
-        {
-            var Investment = await _investmentService.UpdateInvestment(model);
-            if (Investment == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Investment With Id = {model.InvestmentId} cannot be found" });
-            }
-            else
-            {
-                var result = await _investmentService.UpdateInvestment(model);
-                return Ok(new Response { Status = "Success", Message = "Investment updated successfully!" });
-            }
-        }
+        // [HttpPut]
+        // [Route("update-investment")]
+        // public async Task<IActionResult> UpdateInvestment([FromBody] InvestmentViewModel model)
+        // {
+        //     var Investment = await _investmentService.UpdateInvestment(model);
+        //     if (Investment == null)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, new Response
+        //         { Status = "Error", Message = $"Investment With Id = {model.InvestmentId} cannot be found" });
+        //     }
+        //     else
+        //     {
+        //         var result = await _investmentService.UpdateInvestment(model);
+        //         return Ok(new Response { Status = "Success", Message = "Investment updated successfully!" });
+        //     }
+        // }
 
-        [HttpDelete]
-        [Route("delete-Investment")]
-        public async Task<IActionResult> DeleteInvestment(long id)
-        {
-            var Investment = await _investmentService.GetInvestmentById(id);
-            if (Investment == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Investment With Id = {id} cannot be found" });
-            }
-            else
-            {
-                var result = await _investmentService.DeleteInvestmentById(id);
-                return Ok(new Response { Status = "Success", Message = "Investment deleted successfully!" });
-            }
-        }
+        // [HttpDelete]
+        // [Route("delete-Investment")]
+        // public async Task<IActionResult> DeleteInvestment(long id)
+        // {
+        //     var Investment = await _investmentService.GetInvestmentById(id);
+        //     if (Investment == null)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, new Response
+        //         { Status = "Error", Message = $"Investment With Id = {id} cannot be found" });
+        //     }
+        //     else
+        //     {
+        //         var result = await _investmentService.DeleteInvestmentById(id);
+        //         return Ok(new Response { Status = "Success", Message = "Investment deleted successfully!" });
+        //     }
+        // }
 
 
-        [HttpGet]
-        [Route("get-Investment-by-id")]
-        public async Task<IActionResult> GetInvestmentById(long id)
-        {
-            var Investment = await _investmentService.GetInvestmentById(id);
-            if (Investment == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new Response
-                { Status = "Error", Message = $"Investment With Id = {id} cannot be found" });
-            }
-            else
-            {
-                return Ok(Investment);
-            }
-        }
+        // [HttpGet]
+        // [Route("get-Investment-by-id")]
+        // public async Task<IActionResult> GetInvestmentById(long id)
+        // {
+        //     var Investment = await _investmentService.GetInvestmentById(id);
+        //     if (Investment == null)
+        //     {
+        //         return StatusCode(StatusCodes.Status500InternalServerError, new Response
+        //         { Status = "Error", Message = $"Investment With Id = {id} cannot be found" });
+        //     }
+        //     else
+        //     {
+        //         return Ok(Investment);
+        //     }
+        // }
 
         [HttpGet]
         [Route("get-all-investments")]
